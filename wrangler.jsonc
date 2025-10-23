@@ -4,11 +4,11 @@
  */
 {
 	"$schema": "node_modules/wrangler/config-schema.json",
-	"name": "my-static-site",
-	"compatibility_date": "2025-10-23",
-	"assets": {
-		// The path to the directory containing the `index.html` file to be served at `/`
-		"directory": "./public"
+	"name": "cloudflare-static",
+	"compatibility_date": "2025-04-04",
+	"main": "./workers/app.ts",
+	"vars": {
+		"VALUE_FROM_CLOUDFLARE": "Hello from Cloudflare"
 	},
 	"observability": {
 		"enabled": true
