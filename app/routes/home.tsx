@@ -1,9 +1,9 @@
 import type { Route } from "./+types/home";
-import { Welcome } from "../welcome/welcome";
+import Navigation from "../components/Navigation";
 
 export function meta({}: Route.MetaArgs) {
   return [
-    { title: "New React Router App" },
+    { title: "Home - React Router App" },
     { name: "description", content: "Welcome to React Router!" },
   ];
 }
@@ -13,5 +13,14 @@ export function loader({ context }: Route.LoaderArgs) {
 }
 
 export default function Home({ loaderData }: Route.ComponentProps) {
-  return <Welcome message={loaderData.message} />;
+  return (
+    <div className="min-h-screen">
+      <Navigation />
+      <main className="container mx-auto p-6">
+        <h1 className="text-4xl font-bold tracking-tight mb-4">Home</h1>
+        <p className="text-muted-foreground">Welcome to the home page!</p>
+        <p className="text-muted-foreground mt-2">Message from Cloudflare: {loaderData.message}</p>
+      </main>
+    </div>
+  );
 }
