@@ -17,9 +17,9 @@ export default function Navigation() {
 
   return (
     <div className="border-b">
-      <div className="container mx-auto flex items-center justify-between p-4">
-        <NavigationMenu>
-          <NavigationMenuList>
+      <div className="container mx-auto flex flex-col md:flex-row items-start md:items-center justify-between gap-2 p-4">
+        <NavigationMenu className="w-full md:w-auto">
+          <NavigationMenuList className="flex-wrap justify-start">
             <NavigationMenuItem>
               <NavigationMenuLink asChild active={location.pathname === "/"}>
                 <Link
@@ -137,6 +137,19 @@ export default function Navigation() {
                 </Link>
               </NavigationMenuLink>
             </NavigationMenuItem>
+            <NavigationMenuItem>
+              <NavigationMenuLink asChild active={location.pathname === "/lijntjes-vals"}>
+                <Link
+                  to="/lijntjes-vals"
+                  className={cn(
+                    navigationMenuTriggerStyle(),
+                    location.pathname === "/lijntjes-vals" && "font-bold"
+                  )}
+                >
+                  ✏️ Lijntjes
+                </Link>
+              </NavigationMenuLink>
+            </NavigationMenuItem>
             {isAdmin && (
               <NavigationMenuItem>
                 <NavigationMenuLink asChild active={location.pathname === "/admin"}>
@@ -154,7 +167,7 @@ export default function Navigation() {
             )}
           </NavigationMenuList>
         </NavigationMenu>
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-2 w-full md:w-auto justify-end">
           {isAuthenticated ? (
             <div className="flex items-center gap-2">
               <span className="text-sm text-muted-foreground">
