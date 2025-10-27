@@ -12,6 +12,7 @@ export default [
   route("boter-kaas-eieren", "routes/boter-kaas-eieren.tsx"),
   route("vals-spel", "routes/vals-spel.tsx"),
   route("lijntjes-vals", "routes/lijntjes-vals.tsx"),
+  route("memory", "routes/memory.tsx"),
   route("login", "routes/login.tsx"),
   route("admin", "routes/admin.tsx"),
 ] satisfies RouteConfig;

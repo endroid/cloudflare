@@ -150,6 +150,19 @@ export default function Navigation() {
                 </Link>
               </NavigationMenuLink>
             </NavigationMenuItem>
+            <NavigationMenuItem>
+              <NavigationMenuLink asChild active={location.pathname === "/memory"}>
+                <Link
+                  to="/memory"
+                  className={cn(
+                    navigationMenuTriggerStyle(),
+                    location.pathname === "/memory" && "font-bold"
+                  )}
+                >
+                  🧠 Memory
+                </Link>
+              </NavigationMenuLink>
+            </NavigationMenuItem>
             {isAdmin && (
               <NavigationMenuItem>
                 <NavigationMenuLink asChild active={location.pathname === "/admin"}>
