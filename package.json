@@ -10,8 +10,9 @@
 	"scripts": {
 		"build": "react-router build",
 		"cf-typegen": "wrangler types",
+		"check": "pnpm run format && pnpm run format:check && pnpm run lint && pnpm run lint:check",
 		"deploy": "pnpm run build && wrangler deploy",
-		"dev": "pnpm run format && pnpm run format:check && pnpm run lint && pnpm run lint:check && concurrently \"react-router dev\" \"pnpm run lint:watch\" \"pnpm run format:watch\"",
+		"dev": "react-router dev",
 		"format": "oxfmt app",
 		"format:check": "oxfmt app --check",
 		"format:watch": "nodemon --watch app --ext ts,tsx,js,jsx --exec \"oxfmt app\"",
