@@ -4,9 +4,7 @@ export function Welcome({ message }: { message: string }) {
       <div className="flex-1 flex flex-col items-center gap-16 min-h-0">
         <div className="max-w-[300px] w-full space-y-6 px-4">
           <nav className="rounded-3xl border border-gray-200 p-6 dark:border-gray-700 space-y-4">
-            <p className="leading-6 text-gray-700 dark:text-gray-200 text-center">
-                {message}
-            </p>
+            <p className="leading-6 text-gray-700 dark:text-gray-200 text-center">{message}</p>
           </nav>
         </div>
       </div>
@@ -14,10 +12,10 @@ export function Welcome({ message }: { message: string }) {
   );
 }
 
-const resources = [
+const _resources = [
   {
-    href: "https://reactrouter.com/docs",
-    text: "React Router Docs",
+    href: 'https://reactrouter.com/docs',
+    text: 'React Router Docs',
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -36,8 +34,8 @@ const resources = [
     ),
   },
   {
-    href: "https://rmx.as/discord",
-    text: "Join Discord",
+    href: 'https://rmx.as/discord',
+    text: 'Join Discord',
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"

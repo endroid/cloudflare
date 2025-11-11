@@ -1,10 +1,10 @@
-import type { Route } from "./+types/home";
-import { Welcome } from "../welcome/welcome";
+import type { Route } from './+types/home';
+import { Welcome } from '../welcome/welcome';
 
-export function meta({}: Route.MetaArgs) {
+export function meta() {
   return [
-    { title: "Endroid Cloudflare Worker" },
-    { name: "description", content: "Endroid Cloudflare Worker" },
+    { title: 'Endroid Cloudflare Worker' },
+    { name: 'description', content: 'Endroid Cloudflare Worker' },
   ];
 }
 
