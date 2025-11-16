@@ -1,10 +1,8 @@
 import { useLoaderData } from 'react-router';
-import GitHubRepos from '../components/GitHubRepos';
-import Navigation from '../components/Navigation';
 import type { GitHubRepository } from '../types/github/GitHubRepository';
 import { GithubClient } from '../services/GithubClient';
+import GitHubRepos from '../components/GitHubRepos';
 
-// Configure which repositories to display
 const FEATURED_REPOS = [
   'qr-code',
   'teleporter',
@@ -14,7 +12,7 @@ const FEATURED_REPOS = [
   'asset',
   'sudoku',
   'pdf',
-];
+] as const;
 
 export function meta() {
   return [
@@ -31,14 +29,5 @@ export async function loader() {
 
 export default function Home() {
   const repositories = useLoaderData<GitHubRepository[]>();
-
-  return (
-    <div className="min-h-screen bg-white dark:bg-gray-950 text-gray-900 dark:text-white">
-      <Navigation />
-
-      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        {repositories.length > 0 && <GitHubRepos repositories={repositories} />}
-      </main>
-    </div>
-  );
+  return repositories.length > 0 ? <GitHubRepos repositories={repositories} /> : null;
 }
