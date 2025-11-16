@@ -1,6 +1,10 @@
 import type { GitHubRepository } from '../types/github/GitHubRepository';
 
-export default function GitHubRepos({ repositories }: { readonly repositories: readonly GitHubRepository[] }) {
+export default function GitHubRepos({
+  repositories,
+}: {
+  readonly repositories: readonly GitHubRepository[];
+}) {
   return (
     <section className="mb-12">
       <h2 className="text-3xl font-bold mb-6 text-gray-900 dark:text-white">GitHub Repositories</h2>

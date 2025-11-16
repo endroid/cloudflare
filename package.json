@@ -12,7 +12,7 @@
 		"cf-typegen": "wrangler types",
 		"check": "pnpm run format && pnpm run format:check && pnpm run lint && pnpm run lint:check",
 		"deploy": "pnpm run build && wrangler deploy",
-		"dev": "react-router dev",
+		"dev": "concurrently -n dev,lint,fmt -c cyan,yellow,green \"react-router dev\" \"pnpm run lint:watch\" \"pnpm run format:watch\"",
 		"format": "oxfmt app",
 		"format:check": "oxfmt app --check",
 		"format:watch": "nodemon --watch app --ext ts,tsx,js,jsx --exec \"oxfmt app\"",

@@ -16,7 +16,7 @@ export class GithubClient {
       throw new Error(`GitHub API error: ${response.status}`);
     }
 
-    return await response.json() as GitHubApiResponse[];
+    return (await response.json()) as GitHubApiResponse[];
   }
 
   filterAndMapRepositories(
@@ -26,11 +26,13 @@ export class GithubClient {
     return featuredRepoNames
       .map((name) => repos.find((repo) => repo.name === name))
       .filter((repo): repo is GitHubApiResponse => repo !== undefined)
-      .map((repo): GitHubRepository => ({
-        name: repo.name,
-        description: repo.description ?? '',
-        stargazersCount: repo.stargazers_count,
-        htmlUrl: repo.html_url,
-      }));
+      .map(
+        (repo): GitHubRepository => ({
+          name: repo.name,
+          description: repo.description ?? '',
+          stargazersCount: repo.stargazers_count,
+          htmlUrl: repo.html_url,
+        })
+      );
   }
 }
