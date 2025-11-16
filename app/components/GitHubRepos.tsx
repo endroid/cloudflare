@@ -1,4 +1,4 @@
-import type { GitHubRepository } from '../types/github';
+import type { GitHubRepository } from '../types/github/GitHubRepository';
 
 export default function GitHubRepos({ repositories }: { readonly repositories: readonly GitHubRepository[] }) {
   return (

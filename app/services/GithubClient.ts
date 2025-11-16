@@ -1,4 +1,5 @@
-import type { GitHubApiResponse, GitHubRepository } from '../types/github';
+import type { GitHubApiResponse } from '../types/github/GitHubApiResponse';
+import type { GitHubRepository } from '../types/github/GitHubRepository';
 
 export class GithubClient {
   private readonly baseUrl = 'https://api.github.com';

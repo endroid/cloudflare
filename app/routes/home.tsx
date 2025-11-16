@@ -1,7 +1,7 @@
 import { useLoaderData } from 'react-router';
 import GitHubRepos from '../components/GitHubRepos';
 import Navigation from '../components/Navigation';
-import type { GitHubRepository } from '../types/github';
+import type { GitHubRepository } from '../types/github/GitHubRepository';
 import { GithubClient } from '../services/GithubClient';
 
 // Configure which repositories to display
