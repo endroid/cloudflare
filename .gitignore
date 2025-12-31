@@ -1,6 +1,7 @@
 .env
 /node_modules/
 *.tsbuildinfo
+.worktrees/
 
 # React Router
 /.react-router/
